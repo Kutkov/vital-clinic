@@ -1,0 +1,385 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	opacity: 1
+/* head line */
+.tel
+	text-align: left
+	display: inline-block
+.pink
+	color: $accent-two
+	font-weight: 700
+.main-head
+	.header-item
+		white-space: nowrap
+		text-align: center
+		padding: 25px
+		padding-bottom: 15px
+		// border-right: 1px solid $accent
+		height: 141px
+		&::before
+			background: linear-gradient(to top, $accent, #fff)
+			content: "";
+			display: block;
+			position: absolute
+			/* Вместо толщины */
+			width: 1px
+			height: 90%
+			bottom: 0
+			left: 0
+		.header-text
+			font-size: 15px
+			margin-bottom: 7px
+	&__logo
+		max-width: 100%
+	&__callback
+		display: inline-block
+		border-radius: 2px
+		border: 1px solid $accent-two
+		text-align: center
+		margin-top: 5px
+		padding: 3px 18px
+		font-size: 13px
+		color: $accent-two
+		transition: .3s
+		&:hover
+			color: #fff
+			background: $accent-two
+			text-decoration: none
+	&__number-phone
+		font-size: 1.5em
+		a
+			color: #333
+			text-decoration: none
+.main-head
+	.cont
+		text-align: left
+		padding-left: 38px
+	.btn-item
+		white-space: normal
+		border: none
+		.btn
+			line-height: 25px
+			margin-top: 12px
+			padding: 6px
+	.logo::before
+		content: none
+
+/* main menu */
+.main-mnu
+	background: $accent
+	&__pages
+		padding: 0
+		margin: 0
+		list-style-type: none
+		li
+			display: inline-block
+			padding: 16px 0
+			&:hover
+				background: #6da2b9
+				
+			a
+				text-decoration: none
+				color: #fff
+				padding: 20px 24px
+
+/* toggle mnu */
+
+#toggle
+	display: none
+	width: 28px
+	height: 30px
+	margin: 30px 0 4px 30px
+	span
+		&:after, &:before
+			content: ""
+			position: absolute
+			left: 0
+			top: -9px
+		&:after
+			top: 9px
+			width: 100%
+			height: 5px
+			background-color: #fff
+			transition: all 0.3s
+			backface-visibility: hidden
+			border-radius: 2px
+		position: relative
+		display: block
+		width: 100%
+		height: 5px
+		background-color: #fff
+		transition: all 0.3s
+		backface-visibility: hidden
+		border-radius: 2px
+		&:before
+			width: 100%
+			height: 5px
+			background-color: #fff
+			transition: all 0.3s
+			backface-visibility: hidden
+			border-radius: 2px
+	&.on
+		span
+			background-color: transparent
+			&:before
+				transform: rotate(45deg) translate(5px, 5px)
+			&:after
+				transform: rotate(-45deg) translate(7px, -8px)
+		+ #menu
+			opacity: 1
+			visibility: visible
+#menu
+	position: absolute
+	display: none
+	color: #999
+	width: 200px
+	padding: 10px
+	margin: auto
+	text-align: center
+	border-radius: 4px
+	background: white
+	box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05)
+	opacity: 0
+	visibility: hidden
+	transition: opacity .4s
+	z-index: 9999999
+	&:after
+		position: absolute
+		top: -15px
+		left: 30px
+		content: ""
+		display: block
+		border-left: 15px solid transparent
+		border-right: 15px solid transparent
+		border-bottom: 20px solid white
+	ul
+		list-style: none
+		display: block
+		margin: 0
+		padding: 0
+
+	li
+		list-style: none
+		display: block
+		margin: 0
+		padding: 0
+		a
+			list-style: none
+			display: block
+			margin: 0
+			padding: 0
+			padding: 5px
+			color: #888
+			text-decoration: none
+			transition: all .2s
+			&:hover, &:focus
+				background: #1ABC9C
+				color: #fff
+.fixed
+	position: fixed !important
+	top: 0
+	left: 0
+
+/* end toggle mnu */
+				
+/* banner */
+.main-banner
+	background-image: url('/img/banner-last-non-btn.jpg')
+	height: 570px
+	background-position: center center
+	position: relative
+	margin: 2px 0
+	&_cont
+		width: 1135px
+		margin: auto
+		height: 570px
+		position: relative
+	&__promo
+		position: absolute
+		background: url('/img/podlojka.png')
+		background-position: center 0
+		background-size: 100%
+		background-repeat: no-repeat
+		width: 630px
+		height: 205px
+		box-sizing: border-box
+		top: 115px
+		text-align: center
+		padding: 20px
+		right: 0
+		&-releative
+			position: relative
+			.promo_h1
+				color: #7a3e57
+				font-size: 26px
+				font-weight: bold
+				text-transform: uppercase
+				margin-top: 10px
+				margin-bottom: 10px
+			.promo_text
+				display: inline-block
+				font-size: 20px
+				margin: 10px 0
+
+/* button */
+.btn
+	font-size: 16px
+	color: #fff
+	display: inline-block
+	padding: 0 18px
+	line-height: 50px
+	border-radius: 3px
+	border-bottom: 3px solid #7a3e57
+	background: #a54e72
+	text-decoration: uppercase
+	outline: none
+	transition: .3s
+	&:hover
+		color: #fff
+		text-decoration: none
+		background: #7a3e57
+.btn_banner
+	position: absolute
+	top: 200px
+	left: 33%
+.btn_menu
+	display: none
+	float: right
+	top: 10px
+	right: 10px
+	position: relative
+/* adbantages */
+.background-advantages
+	background: $accent
+	padding-top: 30px
+	padding-bottom: 40px
+	.advantages
+		text-align: center
+		color: #fff
+		.fa
+			font-size: 6em
+		.advantages-item
+			margin-top: 35px
+			margin-bottom: 20px
+
+/* how enroll */
+.how-enroll
+	padding-bottom: 50px
+	padding-top: 20px
+	background: url('http://mrtvyborg.ru/assets/templates/viborg/img/bg_how.jpg') no-repeat center
+	.blue
+		color: $accent
+		text-align: center
+		
+	.how-item
+		background: url('http://mrtvyborg.ru/assets/templates/viborg/img/how_bg_text.png') no-repeat center
+		background-size: 100%
+		.how-number
+			height: 100%
+			background: url('http://mrtvyborg.ru/assets/templates/viborg/img/how_bg_number.png') no-repeat center
+			font-size: 26px
+			font-weight: bold
+			color: #488ba7
+			margin: 10px 0
+			position: relative
+			text-align: center
+			&::after
+				content: ''
+				height: 67px
+				width: 25px
+				background: url('http://mrtvyborg.ru/assets/templates/viborg/img/how_item_arrow.png') no-repeat center
+				position: absolute
+				bottom: -40px
+				left: 12px
+		.last-number
+			&::after
+				content: none
+		.how-text
+			height: 100px
+			font-size: 18px
+			line-height: 30px
+			margin: 10px 0
+			padding: 0 15px
+			display: table
+			p
+				display: table-cell
+				vertical-align: middle
+				a
+					color: #333
+					text-decoration: none
+
+/* callback line */
+.bg_blue
+	background: $accent
+	text-align: center
+	color: #fff
+	padding: 5px 0
+	font-size: 24px
+	a
+		color: #fff
+		text-decoration: none
+	.center-text
+/* page footer */
+.page-footer
+	padding: 20px 0
+	.footer_nav
+		vertical-align: top
+		display: inline-block
+		margin-right: 50px
+		font-size: 15px
+		margin-left: 15px
+		margin-top: 0
+		a:hover
+			color: $accent-two
+			text-decoration: none
+			border-bottom: 1px dashed $accent-two
+		li:hover
+			color: $accent-two
+	.header-text
+		text-align: right
+
+@import "media" // Всегда в конце
