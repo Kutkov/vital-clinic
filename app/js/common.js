@@ -1,4 +1,4 @@
-
+/* begin toggle menu*/
 var theToggle = document.getElementById('toggle');
 
 
@@ -22,6 +22,14 @@ window.onscroll = function() {
     } 
 }
 
-if (document.body.clientWidth>800){
-   document.write("<script>console.log('hello!');<\/script>");
-}
+/* end toggle menu */
+
+$(function(){
+    $('.main-mnu__pages .submenu ul').hide();
+    $('.main-mnu__pages .submenu').hover(
+        function(){
+            $(this).find('ul').slideDown();
+        }, function(){
+            $(this).find('ul').slideUp('fast');
+        });
+});
