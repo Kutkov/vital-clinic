@@ -434,6 +434,67 @@ body
 		max-width: 100%
 		border-radius: 5px
 		margin-bottom: 20px
+		transition: .3s
+		&:hover
+			box-shadow: 0px -1px 16px -1px #7a3e57
+.blue-cursor
+	li
+		position: relative
+		list-style-type: none
+		margin: 10px 0
+		color: #333
+		&:hover
+			color: #333
+		&::before
+			position: absolute
+			content: ''
+			width: 23px
+			height: 24px
+			background: url(/img/list_style.png) no-repeat
+			background-size: contain
+			left: -35px
+			top: 0px
+table
+	width: 100%
+	border-collapse: collapse
+	line-height: 40px
+	border: 1px solid $accent
+	margin: 20px 0
+	tbody
+		display: table-row-group
+		vertical-align: middle
+		border-color: inherit
+		tr
+			display: table-row
+			vertical-align: inherit
+			border-color: inherit
+			th
+				background: $accent
+				color: #fff
+				text-align: left
+				font-weight: 300
+				padding: 0 20px
+				&:nth-of-type(2n)
+					width: 160px
+					border-left: 1px solid #fff
+			td
+				border: 1px solid $accent
+				padding: 0 20px
+
+.page_promo_block
+	padding: 20px
+	background: rgba( 72, 139, 167, 0.15)
+	margin: 20px 0
+.promo_wrapper
+	display: inline-block
+	width: 48%
+	vertical-align: middle
+	font-size: 18px
+	line-height: 24px
+	&:first-of-type
+		margin-right: 20px
+
+
 
 
 
